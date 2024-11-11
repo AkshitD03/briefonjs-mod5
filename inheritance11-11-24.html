@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inhereitance In JS</title>
+</head>
+<body>
+    <h1>Inhereitance In JS</h1>
+    <p id="p1"></p>
+    <script>
+      class car {
+        constructor(brand){
+          this.carname = brand;
+        }
+        present(){
+            return "I have a " + this.carname;
+        }
+      }
+      class model extends car{
+        constructor(brand, model){
+           super(brand);
+           this.model = model;
+        }
+        show(){
+            return this.present() + ",WHICH IS A " + this.model;
+        }
+      }    
+      let mycar = new model("Maruti", "Brezza");
+      document.getElementById("p1").innerHTML = mycar.show();
+      </script>
+</body>
+</html>
